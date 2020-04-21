@@ -9,10 +9,12 @@ const messageTwo = document.querySelector('#message-2')
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault()
 
+       
+    const location = input.value
+
     messageOne.textContent = 'Loading...'
     messageTwo.textContent = ''
     
-    const location = input.value
     if(!location){
         return messageOne.textContent = 'Please provide a location'
     }
@@ -22,9 +24,9 @@ weatherForm.addEventListener('submit', (e) => {
 
                 messageOne.textContent = data.error
             }else {
-
-                messageTwo.textContent = data.temperature
                 messageTwo.textContent = data.location
+                messageTwo.textContent = data.temperature
+                
             }
         })
     })

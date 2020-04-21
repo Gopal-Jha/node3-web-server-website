@@ -10,9 +10,9 @@ const forecast = (latitude, longitude, callback) => {
 
             callback('Location code incorrect.', undefined)
         }else{
-
+                
             callback(undefined, {
-                temperature: 'The weather is ' + body.current.weather_icons[0] + '. The current temperature is ' + body.current.temperature + ' and it feels like the temperature is ' + body.current.feelslike + ' but the humidity is ' + body.current.humidity + '.'
+                temperature: 'The weather is ' + body.current.weather_descriptions[0] + '. The current temperature is ' + body.current.temperature + ' and it feels like the temperature is ' + body.current.feelslike + ' but the humidity is ' + body.current.humidity + '.'
             })
         }
     })
