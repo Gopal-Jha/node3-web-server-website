@@ -7,6 +7,7 @@ const forecast = require('./utils/forecast')
 
 
 const app = express()
+const port = process.env.PORT || 3000
 
 //To define path for express config file
 const directoryPath = path.join(__dirname, '../public')
@@ -86,6 +87,6 @@ app.get('*',(req, res ) => {
         message : "Page not found : 404"
     })
 })
-app.listen('3000', () => {
-    console.log('The server is started at port 3000')
+app.listen(port , () => {
+    console.log(`The server is started at port ${port }`)
 })
